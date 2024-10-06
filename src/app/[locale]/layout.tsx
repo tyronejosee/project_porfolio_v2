@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "../styles/globals.css";
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages } from 'next-intl/server';
+import "../../styles/globals.css";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { Footer, NavbarMenu } from "@/components";
 
 const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
+  src: "../fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
+  src: "../fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
@@ -35,21 +39,30 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  params: { locale }
 }: Readonly<{
   children: React.ReactNode;
+  params: { locale: string };
 }>) {
+  const messages = await getMessages();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <main>
-          {children}
-        </main>
-        
+        <NextIntlClientProvider messages={messages}>
+          <ThemeProvider>
+            <NavbarMenu />
+            <main className="max-w-screen-lg mx-auto space-y-16 flex flex-col min-h-[650px] p-4">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
-    </html>
+    </html >
   );
 }

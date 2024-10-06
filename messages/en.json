@@ -1,0 +1,11 @@
+{
+  "Hero": {
+    "title": "Hello world!",
+    "description": "Hello world!",
+    "ctaBtn": "Contact me"
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, es {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+  }
+}
