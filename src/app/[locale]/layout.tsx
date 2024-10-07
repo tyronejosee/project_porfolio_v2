@@ -4,7 +4,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import "../../styles/globals.css";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { Footer, NavbarMenu } from "@/components";
+import { BackToTop, Footer, NavbarMenu } from "@/components";
+
+import owner from "@/data/owner.json";
 
 const geistSans = localFont({
   src: "../fonts/GeistVF.woff",
@@ -18,14 +20,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Tyrone José | Portfolio",
-  description: "Backend developer specializing in Python. Creating efficient and secure applications using frameworks like Django, Flask, and FastAPI. In this portfolio, you will find some of my projects and examples of my work with APIs and databases.",
+  title: `${owner.name} | Portfolio`,
+  description: `${owner.description}`,
   keywords: ["portfolio", "backend", "python", "django", "fastapi", "databases", "developer"],
   openGraph: {
-    title: "Tyrone José - Portfolio",
-    description: "Backend developer specializing in Python. Creating efficient and secure applications using frameworks like Django, Flask, and FastAPI. In this portfolio, you will find some of my projects and examples of my work with APIs and databases.",
+    title: `${owner.name} - Portfolio`,
+    description: `${owner.description}`,
     url: process.env.NEXT_PUBLIC_BASE_URL,
-    siteName: "Tyrone José - Backend Developer",
+    siteName: `${owner.name} - ${owner.specialty}`,
     images: [
       {
         url: "https://res.cloudinary.com/dwyvfa5dj/image/upload/v1726444056/ubt1lho0b0td6ojoukol.webp",
@@ -60,6 +62,7 @@ export default async function RootLayout({
               {children}
             </main>
             <Footer />
+            <BackToTop />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

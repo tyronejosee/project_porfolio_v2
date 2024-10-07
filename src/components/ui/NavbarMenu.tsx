@@ -1,7 +1,9 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
-import { MENUBAR_ITEMS, OWNER } from "@/config/constants";
+import { MENUBAR_ITEMS } from "@/config/constants";
 import { LanguageSwitcher, Logo, ThemeSwitcher } from "@/components";
+
+import owner from "@/data/owner.json";
 
 export const NavbarMenu = () => {
   const t = useTranslations("NavbarMenu");
@@ -19,7 +21,7 @@ export const NavbarMenu = () => {
             size="sm"
             color="dark"
           />
-          <p className="ml-4 font-bold text-inherit">{OWNER}</p>
+          <p className="ml-4 font-bold text-inherit">{owner.name}</p>
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">

@@ -14,6 +14,7 @@ export * from "./sections/ProjectSection";
 export * from "./sections/SkillSection";
 
 // UI Components
+export * from "./ui/BackToTop";
 export * from "./ui/Footer";
 export * from "./ui/Header";
 export * from "./ui/LanguageSwitcher";
