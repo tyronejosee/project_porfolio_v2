@@ -23,14 +23,15 @@ export const NavbarMenu = () => {
         ))}
       </NavbarContent>
       <NavbarContent justify="end">
-        {/* <NavbarItem className="hidden lg:flex">
-          <Link href="#">Download CV</Link>
-        </NavbarItem> */}
         <LanguageSwitcher />
         <ThemeSwitcher />
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Contact me
+          <Button
+            as={Link}
+            color="primary"
+            href="/contact-me"
+          >
+            Contact Me
           </Button>
         </NavbarItem>
       </NavbarContent>

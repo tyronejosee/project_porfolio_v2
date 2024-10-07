@@ -1,9 +1,10 @@
 import Image from "next/image"
 import { Button } from "@nextui-org/react"
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 export const HeroSection = () => {
-  const t = useTranslations();
+  const t = useTranslations("Hero");
+
   return (
     <header className="h-screen flex items-center justify-center">
       <div className="flex flex-col items-center justify-center w-full md:w-1/2 p-4">
@@ -11,15 +12,15 @@ export const HeroSection = () => {
           Hi, I,m Tyrone José
         </h1>
         <p className="text-lg md:text-xl mb-6">
-          {t("Hero.description")}
+          {t("description")}
         </p>
         <p className="mb-8">
-          {t("Hero.title")}
+          {t("title")}
         </p>
         <Button
           color="primary"
         >
-          {t("Hero.ctaBtn")}
+          {t("downloadCVBtn")}
         </Button>
       </div>
       <figure className="hidden md:block w-1/2">
@@ -28,7 +29,7 @@ export const HeroSection = () => {
           alt="Tyrone José"
           width={500}
           height={500}
-          className="object-cover"
+          className="object-cover rounded-full"
         />
       </figure>
     </header>

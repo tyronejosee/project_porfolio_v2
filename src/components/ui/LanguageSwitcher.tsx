@@ -13,7 +13,7 @@ export const LanguageSwitcher = () => {
   const router = useRouter();
   const params = useParams();
 
-  const initialLocale = (params?.locale as string) || 'en';
+  const initialLocale = (params?.locale as string) || "en";
 
   const [selectedLang, setSelectedLang] = React.useState<string>(initialLocale);
 
@@ -26,7 +26,7 @@ export const LanguageSwitcher = () => {
     <Select
       size="sm"
       selectedKeys={new Set([selectedLang])}
-      className="w-20"
+      className="w-16"
       onSelectionChange={(keys) => {
         const selectedValue = Array.from(keys)[0] as string;
         handleLangChange(selectedValue);
