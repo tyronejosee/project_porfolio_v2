@@ -6,5 +6,4 @@ export interface Project {
   repository: string;
   website: string;
   skills: string[];
-  status: boolean;
 }

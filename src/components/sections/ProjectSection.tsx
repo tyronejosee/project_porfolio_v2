@@ -1,15 +1,17 @@
 // import Image from "next/image";
-import { Button } from "@nextui-org/react";
+import Link from "next/link";
+import { Button, Chip } from "@nextui-org/react";
 import { useTranslations } from "next-intl";
+import { Folder } from "lucide-react";
 import { Project } from "@/interfaces";
-import { Header } from "@/components";
+import { GitHubIcon, Header } from "@/components";
 
 interface Props {
   projects: Project[];
 }
 
 export const ProjectSection = ({ projects }: Props) => {
-  const t = useTranslations("projects");
+  const t = useTranslations("ProjectSection");
 
   return (
     <section className="space-y-4">
@@ -17,47 +19,50 @@ export const ProjectSection = ({ projects }: Props) => {
       {projects.map((project) => (
         <article
           key={project.id}
-          className="group grid grid-cols-1 sm:grid-cols-2 gap-4 bg-neutral-100 hover:bg-neutral-200 dark:bg-neutral-900 border dark:border-neutral-800 dark:hover:border-neutral-500 rounded-xl p-2 hover:transition-all duration-300"
+          className="group grid grid-cols-1 sm:grid-cols-2 gap-4 bg-neutral-lightgray dark:bg-neutral-darkgrey border border-neutral-midlight dark:border-neutral-middark hover:border-neutral-gray dark:hover:border-neutral-gray hover:transition-all duration-300 p-4 rounded-xl"
         >
-          <div className="inline-flex flex-col space-y-2 p-4">
-            <h3 className="text-lg font-medium leading-tight border-b border-neutral-700 pb-2">
-              {project.name}
-            </h3>
-            <p className="text-sm text-neutral-500 h-14">
-              {t(project.descriptionKey)}
-            </p>
-            <a
-              href={project.repository}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-500 hover:underline"
-            >
-              Repository
-            </a>
-            <a
-              href={project.website}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-neutral-500 hover:underline"
-            >
-              Website
-            </a>
-            <div className="flex space-x-2">
-              {project.skills.map((skill, index) => (
-                <span
-                  key={index}
-                  className="block text-xs border border-neutral-700 rounded py-1 px-2"
-                >
-                  {skill}
-                </span>
-              ))}
+          <div className="inline-flex flex-col">
+            <div className="border-b border-b-neutral-midlight dark:border-b-neutral-middark group-hover:border-b-neutral-gray dark:group-hover:border-b-neutral-gray hover:transition-all duration-300 pb-2">
+              <h3 className="scroll-m-20 text-2xl font-bold tracking-tight line-clamp-1">
+                {project.name}
+              </h3>
             </div>
-            <div className="pt-4 space-x-2">
-              <Button color="primary">Website</Button>
-              <Button color="secondary">Github repo</Button>
+            <p className="flex items-center text-sm text-primary text-bold space-x-2 pt-2">
+              <Folder size={16} />
+              <span>Project</span>
+            </p>
+            <div className="space-y-4 py-4">
+              <p className="text-sm text-neutral-500 line-clamp-3">
+                {t(project.descriptionKey)}
+              </p>
+              <div className="flex space-x-2">
+                {project.skills.map((skill, index) => (
+                  <Chip
+                    key={index}
+                    size="sm"
+                    color="primary"
+                    variant="bordered"
+                    className="text-xs font-bold"
+                  >
+                    {skill}
+                  </Chip>
+                ))}
+              </div>
+            </div>
+            <div className="flex space-x-2 mt-auto">
+              <Button color="primary" className="text-medium">{t("linkBtn")}</Button>
+              <Link
+                href="https://lucide.dev/icons/chevrons-down"
+                className="p-2 hover:bg-neutral-lightgray dark:hover:bg-neutral-darkgrey dark:hover:text-primary items-center rounded-xl"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Gmail"
+              >
+                <GitHubIcon />
+              </Link>
             </div>
           </div>
-          <figure className="rounded-xl overflow-hidden border dark:border-neutral-500 aspect-video">
+          <figure className="rounded-xl overflow-hidden border dark:border-neutral-middark aspect-video">
             {/* <Image
               src={project.image}
               alt={project.name}

@@ -8,8 +8,10 @@
     "downloadCVBtn": "Descargar CV",
     "prompter": "Explorar"
   },
-  "projects": {
-    "new_store": {
+  "ProjectSection": {
+    "description": "ES Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    "linkBtn": "Enlace",
+    "project_new_store": {
       "description": "ES Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
     }
   }
