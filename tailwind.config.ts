@@ -11,8 +11,15 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#7C00FE",
+        secondary: "#F9E400",
+        neutral: {
+          light: "#fafafa",
+          lightgray: "#e5e5e5",
+          gray: "#737373",
+          darkgrey: "#262626",
+          dark: "#0a0a0a",
+        },
       },
     },
   },

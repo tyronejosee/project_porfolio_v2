@@ -1,4 +1,7 @@
 // Icons Components
+export * from "./icons/GitHubIcon";
+export * from "./icons/GmailIcon";
+export * from "./icons/LinkedInIcon";
 export * from "./icons/Logo";
 export * from "./icons/MoonIcon";
 export * from "./icons/SunIcon";

@@ -1,3 +1,5 @@
+export const OWNER = "Tyrone José"
+
 export const MENUBAR_ITEMS = [
   { id: 1, href: "#experience", label: "Experience" },
   { id: 2, href: "#projects", label: "Projects" },

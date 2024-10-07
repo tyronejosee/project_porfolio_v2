@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  @apply font-sans dark:bg-neutral-dark dark:text-neutral-100 dark:selection:bg-primary dark:selection:text-neutral-light;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }

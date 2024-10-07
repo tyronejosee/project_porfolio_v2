@@ -1,17 +1,26 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
-import { MENUBAR_ITEMS } from "@/config/constants";
+import { useTranslations } from "next-intl";
+import { MENUBAR_ITEMS, OWNER } from "@/config/constants";
 import { LanguageSwitcher, Logo, ThemeSwitcher } from "@/components";
 
 export const NavbarMenu = () => {
+  const t = useTranslations("NavbarMenu");
+
   return (
     <Navbar
       isBordered
       maxWidth="lg"
       shouldHideOnScroll
+      className="fixed z-50"
     >
       <NavbarBrand>
-        <Logo size="sm" color="dark" />
-        <p className="font-bold text-inherit">ACME</p>
+        <Link color="foreground" href="/">
+          <Logo
+            size="sm"
+            color="dark"
+          />
+          <p className="ml-4 font-bold text-inherit">{OWNER}</p>
+        </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         {MENUBAR_ITEMS.map((item) => (
@@ -30,8 +39,9 @@ export const NavbarMenu = () => {
             as={Link}
             color="primary"
             href="/contact-me"
+            className="font-medium"
           >
-            Contact Me
+            {t("contactBtn")}
           </Button>
         </NavbarItem>
       </NavbarContent>
