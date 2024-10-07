@@ -56,7 +56,7 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <ThemeProvider>
             <NavbarMenu />
-            <main className="max-w-screen-lg mx-auto space-y-16 flex flex-col min-h-[650px] p-4">
+            <main className="max-w-screen-md mx-auto space-y-16 flex flex-col min-h-[650px] p-4">
               {children}
             </main>
             <Footer />

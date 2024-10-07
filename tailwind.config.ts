@@ -12,12 +12,13 @@ const config: Config = {
     extend: {
       colors: {
         primary: "#7C00FE",
-        secondary: "#F9E400",
         neutral: {
           light: "#fafafa",
-          lightgray: "#e5e5e5",
+          lightgray: "#f5f5f5",
+          midlight: "#e5e5e5",
           gray: "#737373",
-          darkgrey: "#262626",
+          middark: "#262626",
+          darkgrey: "#171717",
           dark: "#0a0a0a",
         },
       },

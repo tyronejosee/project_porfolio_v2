@@ -1,0 +1,42 @@
+[
+  {
+    "id": "8431366c-f0b9-466b-b992-8d8ad8d1fab1",
+    "jobTitle": "Frontend Developer",
+    "company": "TechCorp Solutions",
+    "dateRange": "Jan 2022 - Present",
+    "descriptionKey": "frontend_dev_techcorp_description",
+    "description": "Responsible for developing user interfaces using React and Next.js. Collaborated with designers and backend developers to deliver responsive and performant web applications."
+  },
+  {
+    "id": "26f5f522-a72d-4be5-9ee4-202b9dc63611",
+    "jobTitle": "UI/UX Designer",
+    "company": "Creative Minds Studio",
+    "dateRange": "Mar 2020 - Dec 2021",
+    "descriptionKey": "uiux_designer_creativeminds_description",
+    "description": "Designed user-friendly and visually appealing interfaces for mobile and web applications. Conducted user research, created wireframes, and worked closely with developers to ensure smooth implementation."
+  },
+  {
+    "id": "88497899-dcfb-4919-afaf-de34dbb1d971",
+    "jobTitle": "Software Engineer Intern",
+    "company": "Innovatech Labs",
+    "dateRange": "Jun 2019 - Aug 2019",
+    "descriptionKey": "software_engineer_intern_innovatech_description",
+    "description": "Assisted in building backend services using Python and Flask. Participated in code reviews, bug fixing, and implementing new features in the company’s internal tools."
+  },
+  {
+    "id": "320fa978-5fdc-404b-9b6c-09695b40048a",
+    "jobTitle": "Full Stack Developer",
+    "company": "WebWorks Agency",
+    "dateRange": "Sep 2018 - Feb 2020",
+    "descriptionKey": "fullstack_dev_webworks_description",
+    "description": "Developed full-stack web applications using JavaScript (Node.js) for the backend and Vue.js for the frontend. Managed databases with PostgreSQL and deployed projects using Docker and Kubernetes."
+  },
+  {
+    "id": "1ac187db-6047-4c5c-a943-2485c34695e9",
+    "jobTitle": "Backend Developer",
+    "company": "NextGen Systems",
+    "dateRange": "May 2017 - Aug 2018",
+    "descriptionKey": "backend_dev_nextgen_description",
+    "description": "Worked on backend services and APIs using Node.js and Express. Integrated third-party services, optimized database queries, and ensured scalability of web services."
+  }
+]
