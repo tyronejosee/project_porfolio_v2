@@ -3,6 +3,8 @@
 // import Image from "next/image";
 import Link from "next/link";
 import { Button, Chip } from "@nextui-org/react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { useTranslations } from "next-intl";
 import { Folder } from "lucide-react";
 import { Project } from "@/interfaces";
@@ -15,13 +17,21 @@ interface Props {
 export const ProjectSection = ({ projects }: Props) => {
   const t = useTranslations("ProjectSection");
 
+  const { ref, inView } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
+
   return (
     <section>
       <Header title="Projects" subtitle="Lorem ipsum" headingLevel="h2" />
-      <div className="space-y-4">
-        {projects.map((project) => (
-          <article
+      <div className="space-y-4" ref={ref}>
+        {projects.map((project, idx) => (
+          <motion.article
             key={project.id}
+            initial={{ opacity: 0, y: 50 }}
+            animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.3, delay: idx * 0.1, ease: "easeOut" }}
             className="group grid grid-cols-1 sm:grid-cols-2 gap-4 bg-neutral-lightgray dark:bg-neutral-darkgrey border border-neutral-midlight dark:border-neutral-middark hover:border-neutral-gray dark:hover:border-neutral-gray hover:transition-all duration-300 p-4 rounded-xl"
           >
             <div className="inline-flex flex-col">
@@ -74,7 +84,7 @@ export const ProjectSection = ({ projects }: Props) => {
               className="group-hover:scale-110 transition-all ease-in-out"
             /> */}
             </figure>
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>

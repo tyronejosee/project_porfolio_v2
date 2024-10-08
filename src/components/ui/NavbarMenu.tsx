@@ -45,6 +45,7 @@ export const NavbarMenu = () => {
             as={Link}
             color="primary"
             href="/contact-me"
+            locale="en"
             className="font-medium"
           >
             {t("contactBtn")}

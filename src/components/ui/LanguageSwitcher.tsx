@@ -25,6 +25,7 @@ export const LanguageSwitcher = () => {
   return (
     <Select
       size="sm"
+      aria-label="Language Selector"
       selectedKeys={new Set([selectedLang])}
       className="w-16"
       onSelectionChange={(keys) => {

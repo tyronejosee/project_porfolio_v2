@@ -1,27 +1,32 @@
-"use client"
+"use client";
 
-import Image from "next/image"
+import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@nextui-org/react"
+import { Button } from "@nextui-org/react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { useTranslations } from "next-intl";
-import { motion } from 'framer-motion';
 import { ChevronDown } from "lucide-react";
 import { GmailIcon } from "../icons/GmailIcon";
 import { LinkedInIcon } from "../icons/LinkedInIcon";
-import { GitHubIcon } from '../icons/GitHubIcon';
+import { GitHubIcon } from "../icons/GitHubIcon";
 
-import owner from "@/data/owner.json"
+import owner from "@/data/owner.json";
 
 export const HeroSection = () => {
   const t = useTranslations("HeroSection");
+  const { ref: sectionRef, inView: isVisible } = useInView({ triggerOnce: false, threshold: 0.1 });
 
   return (
-    <section className="w-full h-[calc(100vh-10vh)] flex items-center justify-center">
+    <section
+      ref={sectionRef}
+      className="w-full h-[calc(100vh-10vh)] flex items-center justify-center"
+    >
       <div className="max-w-screen-lg mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
         <motion.article
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           className="order-2 md:order-1 flex flex-col justify-center"
         >
           <div className="max-w-sm mx-auto space-y-2">
@@ -42,10 +47,7 @@ export const HeroSection = () => {
             )}
             <div>
               <div className="flex items-center space-x-2">
-                <Button
-                  color="primary"
-                  className="font-medium"
-                >
+                <Button color="primary" className="font-medium">
                   {t("downloadCVBtn")}
                 </Button>
                 <Link
@@ -80,9 +82,9 @@ export const HeroSection = () => {
           </div>
         </motion.article>
         <motion.figure
-          initial={{ opacity: 0, y: -30, }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
+          transition={{ duration: 0.3, delay: 0.1 }}
           className="order-1 md:order-2 flex justify-center items-center overflow-hidden h-60 md:h-full rounded-xl"
         >
           <Image
@@ -101,5 +103,5 @@ export const HeroSection = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
