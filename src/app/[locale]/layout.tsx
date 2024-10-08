@@ -20,14 +20,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: `${owner.name} | Portfolio`,
+  title: `${owner.full_name} | Portfolio`,
   description: `${owner.description}`,
   keywords: ["portfolio", "backend", "python", "django", "fastapi", "databases", "developer"],
   openGraph: {
-    title: `${owner.name} - Portfolio`,
+    title: `${owner.full_name} - Portfolio`,
     description: `${owner.description}`,
     url: process.env.NEXT_PUBLIC_BASE_URL,
-    siteName: `${owner.name} - ${owner.specialty}`,
+    siteName: `${owner.full_name} - ${owner.specialty}`,
     images: [
       {
         url: "https://res.cloudinary.com/dwyvfa5dj/image/upload/v1726444056/ubt1lho0b0td6ojoukol.webp",

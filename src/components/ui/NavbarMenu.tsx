@@ -1,5 +1,6 @@
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from "@nextui-org/react";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import { MENUBAR_ITEMS } from "@/config/constants";
 import { LanguageSwitcher, Logo, ThemeSwitcher } from "@/components";
 
@@ -11,17 +12,20 @@ export const NavbarMenu = () => {
   return (
     <Navbar
       isBordered
-      maxWidth="lg"
-      shouldHideOnScroll
+      maxWidth="md"
       className="fixed z-50"
     >
       <NavbarBrand>
-        <Link color="foreground" href="/">
+        <Link
+          href="/"
+          color="foreground"
+          className="inline-flex items-center"
+        >
           <Logo
             size="sm"
-            color="dark"
+            color="primary"
           />
-          <p className="ml-4 font-bold text-inherit">{owner.name}</p>
+          <p className="hidden sm:block ml-4 font-bold text-inherit">{owner.short_name.toUpperCase()}</p>
         </Link>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">

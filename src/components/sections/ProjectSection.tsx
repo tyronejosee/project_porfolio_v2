@@ -50,7 +50,7 @@ export const ProjectSection = ({ projects }: Props) => {
               </div>
             </div>
             <div className="flex space-x-2 mt-auto">
-              <Button color="primary" className="text-medium">{t("linkBtn")}</Button>
+              <Button color="primary" className="text-sm font-medium">{t("linkBtn")}</Button>
               <Link
                 href="https://lucide.dev/icons/chevrons-down"
                 className="p-2 hover:bg-neutral-lightgray dark:hover:bg-neutral-darkgrey dark:hover:text-primary items-center rounded-xl"
