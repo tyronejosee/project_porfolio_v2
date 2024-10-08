@@ -1,5 +1,6 @@
-import Link from "next/link";
+// import Link from "next/link";
 import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
 import { MENUBAR_ITEMS } from "@/config/constants";
 import { LanguageSwitcher, Logo, ThemeSwitcher } from "@/components";
@@ -41,15 +42,14 @@ export const NavbarMenu = () => {
         <LanguageSwitcher />
         <ThemeSwitcher />
         <NavbarItem>
-          <Button
-            as={Link}
-            color="primary"
-            href="/contact-me"
-            locale="en"
-            className="font-medium"
-          >
-            {t("contactBtn")}
-          </Button>
+          <Link href="/contact-me">
+            <Button
+              color="primary"
+              className="font-medium"
+            >
+              {t("contactBtn")}
+            </Button>
+          </Link>
         </NavbarItem>
       </NavbarContent>
     </Navbar>

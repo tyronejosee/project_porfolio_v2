@@ -15,7 +15,9 @@ export * from "./sections/SkillSection";
 
 // UI Components
 export * from "./ui/BackToTop";
+export * from "./ui/ContactForm";
 export * from "./ui/Footer";
+export * from "./ui/FormError";
 export * from "./ui/Header";
 export * from "./ui/LanguageSwitcher";
 export * from "./ui/NavbarMenu";
