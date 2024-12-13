@@ -2,7 +2,6 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/routing";
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@nextui-org/react";
-import { MENUBAR_ITEMS } from "@/config/constants";
 import { LanguageSwitcher, Logo, ThemeSwitcher } from "@/components";
 
 import owner from "@/data/owner.json";
@@ -12,7 +11,6 @@ export const NavbarMenu = () => {
 
   return (
     <Navbar
-      isBordered
       maxWidth="md"
       className="fixed z-50"
     >
@@ -29,20 +27,14 @@ export const NavbarMenu = () => {
           <p className="hidden sm:block ml-4 font-bold text-inherit">{owner.short_name.toUpperCase()}</p>
         </Link>
       </NavbarBrand>
-      <NavbarContent className="hidden sm:flex gap-4" justify="center">
-        {MENUBAR_ITEMS.map((item) => (
-          <NavbarItem key={item.id}>
-            <Link color="foreground" href={item.href}>
-              {item.label}
-            </Link>
-          </NavbarItem>
-        ))}
-      </NavbarContent>
       <NavbarContent justify="end">
         <LanguageSwitcher />
         <ThemeSwitcher />
         <NavbarItem>
-          <Link href="/contact-me">
+          <Link
+            href="/#footer-section"
+          // scroll={false}
+          >
             <Button
               color="primary"
               className="font-medium"

@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="max-w-screen-2xl mx-auto border-t border-neutral-800">
+    <footer id="footer-section" className="max-w-screen-2xl mx-auto border-t border-neutral-800">
       <div className="max-w-screen-lg mx-auto py-4 w-full z-50">
         <div className="text-center">
           <p className="text-balance font-medium text-sm leading-loose text-neutral-500">

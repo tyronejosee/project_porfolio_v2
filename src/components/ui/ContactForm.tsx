@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { Input, Button, Textarea } from "@nextui-org/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { API_URL } from "@/config/constants";
 import { contactSchema } from "@/validations/contactSchema";
 import { ContactValues } from "@/interfaces";
 import { FormError } from "@/components";
@@ -25,13 +24,14 @@ export const ContactForm = () => {
     const formData = new FormData();
 
     formData.append("name", data.name);
-    formData.append("last_name", data.email);
+    formData.append("email", data.email);
     formData.append("message", data.message);
 
     try {
-      const response = await fetch(`${API_URL}/contact`, {
+      const response = await fetch("/api/contact", {
         method: "POST",
-        body: formData,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
       });
 
       if (!response.ok) {

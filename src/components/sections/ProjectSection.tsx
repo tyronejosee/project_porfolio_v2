@@ -75,7 +75,9 @@ export const ProjectSection = ({ projects }: Props) => {
                 </Link>
               </div>
             </div>
-            <figure className="rounded-xl overflow-hidden border dark:border-neutral-middark aspect-video">
+            <figure
+              className="rounded-xl overflow-hidden border dark:border-neutral-middark aspect-video"
+            >
               {/* <Image
               src={project.image}
               alt={project.name}

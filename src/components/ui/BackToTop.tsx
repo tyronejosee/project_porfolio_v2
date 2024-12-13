@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@nextui-org/react";
-import { useTranslations } from "next-intl";
 import {
   motion,
   AnimatePresence,
@@ -12,8 +11,6 @@ import {
 import { ChevronUp } from "lucide-react";
 
 export const BackToTop = () => {
-  const t = useTranslations("UI");
-
   const { scrollYProgress } = useScroll();
   const [visible, setVisible] = useState(false);
   const [showing, setShowing] = useState(false);
@@ -21,7 +18,7 @@ export const BackToTop = () => {
   useMotionValueEvent(scrollYProgress, "change", (current) => {
     // Check if current is not undefined and is a number
     if (typeof current === "number") {
-      let direction = current! - scrollYProgress.getPrevious()!;
+      const direction = current! - scrollYProgress.getPrevious()!;
 
       if (scrollYProgress.get() < 0.05) {
         setVisible(false);
@@ -42,7 +39,7 @@ export const BackToTop = () => {
       const timer = setTimeout(() => {
         setVisible(false);
         setShowing(false);
-      }, 2000);
+      }, 4000);
 
       return () => clearTimeout(timer);
     }
@@ -60,16 +57,16 @@ export const BackToTop = () => {
       <motion.div
         initial={{
           opacity: 1,
-          y: -200,
+          y: 200,
         }}
         animate={{
-          y: visible ? 0 : -200,
+          y: visible ? 0 : 200,
           opacity: visible ? 1 : 0,
         }}
         transition={{
           duration: 0.2,
         }}
-        className="flex max-w-fit z-40 fixed top-16 inset-x-0 mx-auto mt-2"
+        className="flex max-w-fit z-40 fixed bottom-4 inset-x-0 mx-auto"
       >
         <Button
           onClick={scrollToTop}
@@ -78,7 +75,6 @@ export const BackToTop = () => {
           className="text-sm font-medium"
         >
           <ChevronUp size={14} />
-          {t("backToTopBtn")}
         </Button>
       </motion.div>
     </AnimatePresence>

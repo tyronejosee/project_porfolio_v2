@@ -1,4 +1,4 @@
-import { HeroSection, ProjectSection, SkillSection } from "@/components";
+import { ContactSection, HeroSection, ProjectSection, SkillSection } from "@/components";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 
 import projects from "@/data/projects.json"
@@ -12,6 +12,7 @@ export default function HomePage() {
       <ExperienceSection experiences={experiences} />
       <ProjectSection projects={projects} />
       <SkillSection skills={skills} />
+      < ContactSection />
     </>
   );
 }

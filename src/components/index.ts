@@ -9,6 +9,7 @@ export * from "./icons/SunIcon";
 // Sections Components
 export * from "./sections/ExperienceSection";
 export * from "./sections/HeroSection";
+export * from "./sections/ContactSection";
 export * from "./sections/ProjectSection";
 export * from "./sections/ProjectSection";
 export * from "./sections/SkillSection";
