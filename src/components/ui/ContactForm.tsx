@@ -8,7 +8,6 @@ import { contactSchema } from "@/validations/contactSchema";
 import { ContactValues } from "@/interfaces";
 import { FormError } from "@/components";
 
-
 export const ContactForm = () => {
   const router = useRouter();
 
@@ -28,7 +27,7 @@ export const ContactForm = () => {
     formData.append("message", data.message);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/messages", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -46,7 +45,6 @@ export const ContactForm = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-
       {/* Name field */}
       <Input
         label="Name *"
