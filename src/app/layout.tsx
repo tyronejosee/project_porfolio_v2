@@ -1,20 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
-import "../../styles/globals.css";
-import { ThemeProvider } from "@/components/providers/ThemeProvider";
-import { BackToTop, Footer, NavbarMenu } from "@/components";
+import { ThemeProvider } from "@/components/providers";
+import { BackToTop, Footer, NavbarMenu } from "@/components/ui";
 
+import "../styles/globals.css";
 import owner from "@/data/owner.json";
 
 const geistSans = localFont({
-  src: "../fonts/GeistVF.woff",
+  src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
   weight: "100 900",
 });
 const geistMono = localFont({
-  src: "../fonts/GeistMonoVF.woff",
+  src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
 });
@@ -22,7 +20,15 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: `${owner.full_name} | Portfolio`,
   description: `${owner.description}`,
-  keywords: ["portfolio", "backend", "python", "django", "fastapi", "databases", "developer"],
+  keywords: [
+    "portfolio",
+    "backend",
+    "python",
+    "django",
+    "fastapi",
+    "databases",
+    "developer",
+  ],
   openGraph: {
     title: `${owner.full_name} - Portfolio`,
     description: `${owner.description}`,
@@ -43,29 +49,23 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  params: { locale }
 }: Readonly<{
   children: React.ReactNode;
-  params: { locale: string };
 }>) {
-  const messages = await getMessages();
-
   return (
-    <html lang={locale}>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NextIntlClientProvider messages={messages}>
-          <ThemeProvider>
-            <NavbarMenu />
-            <main className="max-w-screen-md mx-auto space-y-16 flex flex-col min-h-[650px] p-4">
-              {children}
-            </main>
-            <Footer />
-            <BackToTop />
-          </ThemeProvider>
-        </NextIntlClientProvider>
+        <ThemeProvider>
+          <NavbarMenu />
+          <main className="max-w-screen-md mx-auto space-y-16 flex flex-col min-h-[650px] p-4">
+            {children}
+          </main>
+          <Footer />
+          <BackToTop />
+        </ThemeProvider>
       </body>
-    </html >
+    </html>
   );
 }

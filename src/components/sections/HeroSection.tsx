@@ -1,21 +1,21 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
-import { GmailIcon } from "../icons/GmailIcon";
-import { LinkedInIcon } from "../icons/LinkedInIcon";
-import { GitHubIcon } from "../icons/GitHubIcon";
+import { GitHubIcon, GmailIcon, LinkedInIcon } from "@/components/icons";
 
 import owner from "@/data/owner.json";
+import messages from "@/data/messages.json";
 
-export const HeroSection = () => {
-  const t = useTranslations("HeroSection");
-  const { ref: sectionRef, inView: isVisible } = useInView({ triggerOnce: false, threshold: 0.1 });
+export default function HeroSection() {
+  const { ref: sectionRef, inView: isVisible } = useInView({
+    triggerOnce: false,
+    threshold: 0.1,
+  });
 
   return (
     <section
@@ -30,12 +30,16 @@ export const HeroSection = () => {
           className="order-2 md:order-1 flex flex-col justify-center"
         >
           <div className="max-w-sm mx-auto space-y-2">
-            <span className="text-lg font-medium leading-tight">Portfolio / About</span>
+            <span className="text-lg font-medium leading-tight">
+              Portfolio / About
+            </span>
             <h2 className="scroll-m-20 text-4xl font-bold tracking-tight border-b dark:border-neutral-800 pb-6">
-              {t("greeting")}
+              {messages.greeting}
               <span className="text-chartreuse-500">{owner.short_name}</span>
             </h2>
-            <p className="text-neutral-500 line-clamp-3">{t("description")}</p>
+            <p className="text-neutral-500 line-clamp-3">
+              {messages.description}
+            </p>
             {owner.signature && (
               <Image
                 src={owner.signature}
@@ -48,7 +52,7 @@ export const HeroSection = () => {
             <div>
               <div className="flex items-center space-x-2">
                 <Button color="primary" className="font-medium">
-                  {t("downloadCVBtn")}
+                  {messages.downloadCVBtn}
                 </Button>
                 <Link
                   href="https://lucide.dev/icons/chevrons-down"
@@ -89,7 +93,7 @@ export const HeroSection = () => {
         >
           <Image
             src="/images/hero-image.webp"
-            alt="Tyrone José"
+            alt={owner.full_name}
             width={300}
             height={300}
             className="object-cover w-full"
@@ -99,7 +103,7 @@ export const HeroSection = () => {
       <div className="absolute bottom-4 md:bottom-10 left-1/2 transform -translate-x-1/2 animate-pulse">
         <div className="flex flex-col justify-center items-center">
           <ChevronDown />
-          <span className="text-sm">{t("prompter")}</span>
+          <span className="text-sm">{messages.prompter}</span>
         </div>
       </div>
     </section>

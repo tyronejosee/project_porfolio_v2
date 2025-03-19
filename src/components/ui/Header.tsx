@@ -4,7 +4,7 @@ interface Props {
   headingLevel?: "h1" | "h2" | "h3";
 }
 
-export const Header = ({ title, subtitle, headingLevel = "h1" }: Props) => {
+export default function Header({ title, subtitle, headingLevel = "h1" }: Props) {
   const HeadingTag = headingLevel;
 
   return (
@@ -14,5 +14,5 @@ export const Header = ({ title, subtitle, headingLevel = "h1" }: Props) => {
       </HeadingTag>
       <p className="text-neutral-gray">{subtitle}</p>
     </header>
-  )
-}
+  );
+};

@@ -1,9 +1,9 @@
-interface LogoProps {
+interface Props {
   size?: "sm" | "md" | "lg";
   color?: "primary" | "light" | "dark";
 }
 
-export const Logo = ({ size = "md", color = "primary" }: LogoProps) => {
+export default function Logo ({ size = "md", color = "primary" }: Props) {
   const sizeClasses = {
     sm: "w-8 h-8",
     md: "w-16 h-16",

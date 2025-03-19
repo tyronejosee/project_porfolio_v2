@@ -1,16 +1,16 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Building2 } from "lucide-react";
 import { useInView } from "react-intersection-observer";
+import { Building2 } from "lucide-react";
+import { Header } from "@/components/ui";
 import { Experience } from "@/interfaces";
-import { Header } from "@/components";
 
 interface Props {
   experiences: Experience[];
 }
 
-export const ExperienceSection = ({ experiences }: Props) => {
+export default function ExperienceSection({ experiences }: Props) {
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -33,7 +33,9 @@ export const ExperienceSection = ({ experiences }: Props) => {
                 <h3 className="scroll-m-20 text-2xl font-bold tracking-tight">
                   {experience.jobTitle}
                 </h3>
-                <span className="text-sm font-medium">{experience.dateRange}</span>
+                <span className="text-sm font-medium">
+                  {experience.dateRange}
+                </span>
               </div>
               <div className="col-span-2 space-y-4 pt-2">
                 <div>

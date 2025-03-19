@@ -3,7 +3,11 @@
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { NextUIProvider } from "@nextui-org/react";
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function ThemeProvider({ children }: Props) {
   return (
     <NextThemesProvider
       attribute="class"
@@ -16,4 +20,4 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       <NextUIProvider>{children}</NextUIProvider>
     </NextThemesProvider>
   );
-};
+}

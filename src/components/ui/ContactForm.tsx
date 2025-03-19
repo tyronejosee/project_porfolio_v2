@@ -6,9 +6,9 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema } from "@/validations/contactSchema";
 import { ContactValues } from "@/interfaces";
-import { FormError } from "@/components";
+import { FormError } from "@/components/ui";
 
-export const ContactForm = () => {
+export default function ContactForm() {
   const router = useRouter();
 
   const {

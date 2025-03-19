@@ -1,23 +1,26 @@
-"use client"
+"use client";
 
-import { Skill } from "@/interfaces";
 import Image from "next/image";
-import { Header } from "@/components";
 import { Tooltip } from "@nextui-org/react";
+import { motion } from "framer-motion";
+import { Skill } from "@/interfaces";
+import { Header } from "@/components/ui";
 import { useAnimateOnView } from "@/hooks";
-import { motion } from 'framer-motion';
 
 interface Props {
   skills: Skill[];
 }
 
-export const SkillSection = ({ skills }: Props) => {
+export default function SkillSection({ skills }: Props) {
   const { ref, controls, itemVariants } = useAnimateOnView(0.1, false);
 
   return (
     <section className="space-y-4">
       <Header title="Skills" subtitle="Lorem ipsum" headingLevel="h2" />
-      <div className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2" ref={ref}>
+      <div
+        className="grid grid-cols-4 sm:grid-cols-6 lg:grid-cols-8 gap-2"
+        ref={ref}
+      >
         {skills.map((skill, idx) => (
           <motion.div
             key={skill.id}
@@ -48,5 +51,5 @@ export const SkillSection = ({ skills }: Props) => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};

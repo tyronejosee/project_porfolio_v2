@@ -1,22 +1,21 @@
-"use client"
+"use client";
 
-// import Image from "next/image";
 import Link from "next/link";
 import { Button, Chip } from "@nextui-org/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import { useTranslations } from "next-intl";
 import { Folder } from "lucide-react";
+import { Header } from "@/components/ui";
+import { GitHubIcon } from "@/components/icons";
 import { Project } from "@/interfaces";
-import { GitHubIcon, Header } from "@/components";
+
+import messages from "@/data/messages.json";
 
 interface Props {
   projects: Project[];
 }
 
-export const ProjectSection = ({ projects }: Props) => {
-  const t = useTranslations("ProjectSection");
-
+export default function ProjectSection({ projects }: Props) {
   const { ref, inView } = useInView({
     triggerOnce: false,
     threshold: 0.1,
@@ -46,7 +45,7 @@ export const ProjectSection = ({ projects }: Props) => {
               </p>
               <div className="space-y-4 py-4">
                 <p className="text-sm text-neutral-500 line-clamp-3">
-                  {t(project.descriptionKey)}
+                  {messages.projectLinkBtn}
                 </p>
                 <div className="flex space-x-2">
                   {project.skills.map((skill, index) => (
@@ -63,7 +62,9 @@ export const ProjectSection = ({ projects }: Props) => {
                 </div>
               </div>
               <div className="flex space-x-2 mt-auto">
-                <Button color="primary" className="text-sm font-medium">{t("linkBtn")}</Button>
+                <Button color="primary" className="text-sm font-medium">
+                  {messages.projectLinkBtn}
+                </Button>
                 <Link
                   href="https://lucide.dev/icons/chevrons-down"
                   className="p-2 hover:bg-neutral-lightgray dark:hover:bg-neutral-darkgrey dark:hover:text-primary items-center rounded-xl"
@@ -75,9 +76,7 @@ export const ProjectSection = ({ projects }: Props) => {
                 </Link>
               </div>
             </div>
-            <figure
-              className="rounded-xl overflow-hidden border dark:border-neutral-middark aspect-video"
-            >
+            <figure className="rounded-xl overflow-hidden border dark:border-neutral-middark aspect-video">
               {/* <Image
               src={project.image}
               alt={project.name}
@@ -90,5 +89,5 @@ export const ProjectSection = ({ projects }: Props) => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};
