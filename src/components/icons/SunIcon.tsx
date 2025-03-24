@@ -1,4 +1,10 @@
-export default function SunIcon(props) {
+import { SVGProps } from "react";
+
+interface Props extends SVGProps<SVGSVGElement> {
+  className?: string;
+}
+
+export default function SunIcon(props: Props) {
   return (
     <svg
       aria-hidden="true"

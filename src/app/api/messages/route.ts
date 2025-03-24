@@ -9,10 +9,11 @@ export async function POST(req: Request) {
     const data = await req.json();
     await messageNotifier.notify(data);
 
-    return NextResponse.json({ message: "Notificación enviada" });
+    return NextResponse.json({ message: "Notification sent" });
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
-      { error: "Error procesando la solicitud" },
+      { error: "Error processing the request" },
       { status: 500 }
     );
   }
