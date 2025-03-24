@@ -5,7 +5,7 @@ import {
   NavbarContent,
   NavbarItem,
   Button,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { ThemeSwitcher } from "@/components/ui";
 import { Logo } from "@/components/icons";
 

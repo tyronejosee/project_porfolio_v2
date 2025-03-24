@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Button, Chip } from "@nextui-org/react";
+import { Button, Chip } from "@heroui/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Folder } from "lucide-react";
@@ -62,7 +62,10 @@ export default function ProjectSection({ projects }: Props) {
                 </div>
               </div>
               <div className="flex space-x-2 mt-auto">
-                <Button color="primary" className="text-sm font-medium">
+                <Button
+                color="primary"
+                className="transform-none font-medium"
+                >
                   {messages.projectLinkBtn}
                 </Button>
                 <Link

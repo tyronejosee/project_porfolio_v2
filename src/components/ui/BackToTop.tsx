@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import {
   motion,
   AnimatePresence,
@@ -71,6 +71,7 @@ export default function BackToTop() {
           onClick={scrollToTop}
           color="primary"
           aria-label="Back to Top"
+          size="sm"
           className="text-sm font-medium"
         >
           <ChevronUp size={14} />

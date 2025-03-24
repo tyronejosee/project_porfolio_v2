@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Tooltip } from "@nextui-org/react";
+import { Tooltip } from "@heroui/react";
 import { motion } from "framer-motion";
 import { Skill } from "@/interfaces";
 import { Header } from "@/components/ui";

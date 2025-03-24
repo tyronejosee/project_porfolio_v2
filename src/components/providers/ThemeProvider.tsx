@@ -1,7 +1,7 @@
 "use client";
 
 import { ThemeProvider as NextThemesProvider } from "next-themes";
-import { NextUIProvider } from "@nextui-org/react";
+import { HeroUIProvider } from "@heroui/react";
 
 interface Props {
   children: React.ReactNode;
@@ -9,15 +9,17 @@ interface Props {
 
 export default function ThemeProvider({ children }: Props) {
   return (
-    <NextThemesProvider
-      attribute="class"
-      defaultTheme="system"
-      value={{
-        light: "light",
-        dark: "dark",
-      }}
-    >
-      <NextUIProvider>{children}</NextUIProvider>
-    </NextThemesProvider>
+    <HeroUIProvider>
+      <NextThemesProvider
+        attribute="class"
+        defaultTheme="dark"
+        // value={{
+        //   light: "light",
+        //   dark: "dark",
+        // }}
+      >
+        {children}
+      </NextThemesProvider>
+    </HeroUIProvider>
   );
 }

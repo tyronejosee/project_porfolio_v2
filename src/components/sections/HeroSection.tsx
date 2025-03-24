@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "@nextui-org/react";
+import { Button } from "@heroui/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { ChevronDown } from "lucide-react";
@@ -23,10 +23,11 @@ export default function HeroSection() {
       className="w-full h-[calc(100vh-10vh)] flex items-center justify-center"
     >
       <div className="max-w-screen-lg mx-auto grid sm:grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center">
-        <motion.article
+        <motion.div
+          layout
           initial={{ opacity: 0, y: 50 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
+          transition={{ duration: 0.3 }}
           className="order-2 md:order-1 flex flex-col justify-center"
         >
           <div className="max-w-sm mx-auto space-y-2">
@@ -51,7 +52,10 @@ export default function HeroSection() {
             )}
             <div>
               <div className="flex items-center space-x-2">
-                <Button color="primary" className="font-medium">
+                <Button
+                  color="primary"
+                  className="transform-none font-medium"
+                >
                   {messages.downloadCVBtn}
                 </Button>
                 <Link
@@ -84,11 +88,11 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        </motion.article>
+        </motion.div>
         <motion.figure
           initial={{ opacity: 0, y: -50 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: -50 }}
-          transition={{ duration: 0.3, delay: 0.1 }}
+          transition={{ duration: 0.3 }}
           className="order-1 md:order-2 flex justify-center items-center overflow-hidden h-60 md:h-full rounded-xl"
         >
           <Image

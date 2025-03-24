@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { Input, Button, Textarea } from "@nextui-org/react";
+import { Input, Button, Textarea } from "@heroui/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { contactSchema } from "@/validations/contactSchema";
@@ -83,7 +83,7 @@ export default function ContactForm() {
         type="submit"
         color="primary"
         radius="md"
-        className="font-medium w-full"
+        className="font-medium"
       >
         Send Message
       </Button>
