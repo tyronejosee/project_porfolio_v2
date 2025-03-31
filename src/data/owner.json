@@ -1,7 +1,7 @@
 {
-  "short_name": "Tyone",
-  "full_name": "Tyone José",
-  "description": "Backend developer specializing in Python. Creating efficient and secure applications using frameworks like Django, Flask, and FastAPI. In this portfolio, you will find some of my projects and examples of my work with APIs and databases.",
-  "specialty": "Backend Developer",
+  "short_name": "Fake Person",
+  "full_name": "Fake Person",
+  "description": "I am passionate about performance optimization, technical SEO, and web accessibility, ensuring that applications are fast, indexable, and usable for all users.",
+  "specialty": "Frontend Developer",
   "signature": "https://res.cloudinary.com/dwyvfa5dj/image/upload/v1728319324/Portfolio/signature.svg"
 }

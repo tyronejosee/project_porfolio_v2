@@ -4,9 +4,11 @@ import { useRouter } from "next/navigation";
 import { Input, Button, Textarea } from "@heroui/react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { contactSchema } from "@/validations/contactSchema";
-import { ContactValues } from "@/interfaces";
+import { ArrowUpRight } from "lucide-react";
 import { FormError } from "@/components/ui";
+import { AnimatedContent } from "@/components/animated";
+import { ContactValues } from "@/interfaces";
+import { contactSchema } from "@/validations/contactSchema";
 
 export default function ContactForm() {
   const router = useRouter();
@@ -46,51 +48,62 @@ export default function ContactForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
       {/* Name field */}
-      <Input
-        label="Name *"
-        size="sm"
-        type="text"
-        radius="md"
-        required
-        {...register("name")}
-      />
-      {errors.name?.message && <FormError>* {errors.name?.message}</FormError>}
+      <AnimatedContent>
+        <Input
+          label="Name *"
+          size="sm"
+          type="text"
+          radius="md"
+          required
+          {...register("name")}
+        />
+        {errors.name?.message && (
+          <FormError>* {errors.name?.message}</FormError>
+        )}
+      </AnimatedContent>
 
       {/* Email field */}
-      <Input
-        label="Email *"
-        size="sm"
-        type="email"
-        radius="md"
-        {...register("email")}
-      />
-      {errors.email?.message && (
-        <FormError>* {errors.email?.message}</FormError>
-      )}
+      <AnimatedContent>
+        <Input
+          label="Email *"
+          size="sm"
+          type="email"
+          radius="md"
+          {...register("email")}
+        />
+        {errors.email?.message && (
+          <FormError>* {errors.email?.message}</FormError>
+        )}
+      </AnimatedContent>
 
       {/* Message field */}
-      <Textarea
-        label="Message"
-        size="sm"
-        radius="md"
-        {...register("message")}
-      />
-      {errors.message?.message && (
-        <FormError>* {errors.message?.message}</FormError>
-      )}
+      <AnimatedContent>
+        <Textarea
+          label="Message"
+          size="sm"
+          radius="md"
+          {...register("message")}
+        />
+        {errors.message?.message && (
+          <FormError>* {errors.message?.message}</FormError>
+        )}
+      </AnimatedContent>
 
-      <Button
-        type="submit"
-        color="primary"
-        radius="md"
-        className="font-medium"
-      >
-        Send Message
-      </Button>
+      <AnimatedContent>
+        <Button
+          type="submit"
+          color="primary"
+          radius="md"
+          className="font-medium"
+          startContent={<ArrowUpRight size={16} />}
+        >
+          Send Message
+        </Button>
 
-      <p className="text-xs text-neutral-gray text-center">
-        * Fields marked with an asterisk are required.
-      </p>
+        <p className="text-xs text-neutral-gray text-center">
+          * Fields marked with an asterisk are required.
+        </p>
+      </AnimatedContent>
     </form>
   );
-};
+}
