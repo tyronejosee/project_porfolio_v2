@@ -11,6 +11,7 @@
   "dependencies": {
     "@heroui/react": "^2.7.5",
     "@hookform/resolvers": "3.9.0",
+    "@react-spring/web": "^9.7.5",
     "clsx": "2.1.1",
     "framer-motion": "11.9.0",
     "lucide-react": "0.447.0",
