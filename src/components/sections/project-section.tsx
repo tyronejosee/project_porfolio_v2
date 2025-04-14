@@ -1,18 +1,19 @@
 "use client";
 
+import type { Project } from "@/types";
+
 import Link from "next/link";
 import { Button, Chip } from "@heroui/react";
 import { Folder } from "lucide-react";
 import { Header } from "@/components/ui";
-import { AnimatedContent } from "@/components/animated";
 import { GitHubIcon } from "@/components/icons";
-import { Project } from "@/interfaces";
+import { AnimatedContent } from "@/components/animated";
 
 import messages from "@/data/messages.json";
 
-interface Props {
+type Props = {
   projects: Project[];
-}
+};
 
 export default function ProjectSection({ projects }: Props) {
   return (

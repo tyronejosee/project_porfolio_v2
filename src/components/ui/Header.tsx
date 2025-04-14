@@ -1,10 +1,10 @@
 import { AnimatedContent } from "@/components/animated";
 
-interface Props {
+type Props = {
   title: string;
   subtitle?: string;
   headingLevel?: "h1" | "h2" | "h3";
-}
+};
 
 export default function Header({
   title,

@@ -1,14 +1,15 @@
 "use client";
 
+import type { ContactValues } from "@/types";
+
 import { useRouter } from "next/navigation";
 import { Input, Button, Textarea } from "@heroui/react";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowUpRight } from "lucide-react";
 import { FormError } from "@/components/ui";
 import { AnimatedContent } from "@/components/animated";
-import { ContactValues } from "@/interfaces";
-import { contactSchema } from "@/validations/contactSchema";
+import { contactSchema } from "@/lib/validations";
 
 export default function ContactForm() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function ContactForm() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit: SubmitHandler<ContactValues> = async (data) => {
+  const onSubmit = async (data: ContactValues) => {
     const formData = new FormData();
 
     formData.append("name", data.name);

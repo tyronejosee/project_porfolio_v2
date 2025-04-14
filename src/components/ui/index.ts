@@ -1,7 +1,7 @@
-export { default as BackToTop } from "./BackToTop";
-export { default as ContactForm } from "./ContactForm";
-export { default as Footer } from "./Footer";
-export { default as FormError } from "./FormError";
-export { default as Header } from "./Header";
-export { default as NavbarMenu } from "./NavbarMenu";
-export { default as ThemeSwitcher } from "./ThemeSwitcher";
+export { default as BackToTop } from "./back-to-top";
+export { default as ContactForm } from "./contact-form";
+export { default as Footer } from "./footer";
+export { default as FormError } from "./form-error";
+export { default as Header } from "./header";
+export { default as NavbarMenu } from "./navbar-menu";
+export { default as ThemeSwitcher } from "./theme-switcher";

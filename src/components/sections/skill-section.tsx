@@ -1,14 +1,15 @@
 "use client";
 
+import type { Skill } from "@/types";
+
 import Image from "next/image";
 import { Tooltip } from "@heroui/react";
 import { Header } from "@/components/ui";
 import { AnimatedContent } from "@/components/animated";
-import { Skill } from "@/interfaces";
 
-interface Props {
+type Props = {
   skills: Skill[];
-}
+};
 
 export default function SkillSection({ skills }: Props) {
   return (

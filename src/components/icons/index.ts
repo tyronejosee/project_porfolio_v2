@@ -1,6 +1,6 @@
-export { default as GitHubIcon } from "./GitHubIcon";
-export { default as GmailIcon } from "./GmailIcon";
-export { default as LinkedInIcon } from "./LinkedInIcon";
-export { default as Logo } from "./Logo";
-export { default as MoonIcon } from "./MoonIcon";
-export { default as SunIcon } from "./SunIcon";
+export { default as GitHubIcon } from "./github-icon";
+export { default as GmailIcon } from "./gmail-icon";
+export { default as LinkedInIcon } from "./linkedin-icon";
+export { default as Logo } from "./logo";
+export { default as MoonIcon } from "./moon-icon";
+export { default as SunIcon } from "./sun-icon";

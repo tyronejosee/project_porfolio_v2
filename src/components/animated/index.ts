@@ -1,1 +1,1 @@
-export { default as AnimatedContent } from "./AnimatedContent";
+export { default as AnimatedContent } from "./animated-content";

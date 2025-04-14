@@ -1,13 +1,14 @@
 "use client";
 
+import type { Experience } from "@/types";
+
 import { Building2 } from "lucide-react";
 import { Header } from "@/components/ui";
 import { AnimatedContent } from "@/components/animated";
-import { Experience } from "@/interfaces";
 
-interface Props {
+type Props = {
   experiences: Experience[];
-}
+};
 
 export default function ExperienceSection({ experiences }: Props) {
   return (

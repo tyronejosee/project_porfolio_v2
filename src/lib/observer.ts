@@ -1,4 +1,4 @@
-import { ContactValues } from "@/interfaces";
+import { ContactValues } from "@/types";
 
 export type Observer = {
   update: (data: ContactValues) => Promise<void>;

@@ -1,1 +1,1 @@
-export * from "./useAnimateOnView";
+export * from "./use-animate-on-view";

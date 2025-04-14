@@ -1,9 +1,9 @@
-interface Props {
+type Props = {
   size?: "sm" | "md" | "lg";
   color?: "primary" | "light" | "dark";
-}
+};
 
-export default function Logo ({ size = "md", color = "primary" }: Props) {
+export default function Logo({ size = "md", color = "primary" }: Props) {
   const sizeClasses = {
     sm: "w-8 h-8",
     md: "w-16 h-16",
@@ -25,4 +25,4 @@ export default function Logo ({ size = "md", color = "primary" }: Props) {
       <path d="M0 102.4C56.554 102.4 102.4 56.554 102.4 0H153.6V102.4H256V153.6C199.446 153.6 153.6 199.446 153.6 256H102.4V153.6H0V102.4Z" />
     </svg>
   );
-};
+}
