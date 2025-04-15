@@ -1,3 +1,5 @@
+"use client";
+
 import owner from "@/data/owner.json";
 import messages from "@/data/messages.json";
 
@@ -23,4 +25,4 @@ export default function Footer() {
       </div>
     </footer>
   );
-};
+}

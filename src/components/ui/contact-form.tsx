@@ -47,63 +47,64 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-      {/* Name field */}
+    <form onSubmit={handleSubmit(onSubmit)}>
       <AnimatedContent>
-        <Input
-          label="Name *"
-          size="sm"
-          type="text"
-          radius="md"
-          required
-          {...register("name")}
-        />
-        {errors.name?.message && (
-          <FormError>* {errors.name?.message}</FormError>
-        )}
-      </AnimatedContent>
+        <div className="space-y-4">
+          <div className="flex gap-4">
+            {/* Name field */}
+            <Input
+              label="Name"
+              labelPlacement="outside"
+              size="lg"
+              type="text"
+              radius="md"
+              placeholder="John Doe"
+              isInvalid={!!errors.name}
+              errorMessage={errors.name?.message}
+              {...register("name")}
+            />
 
-      {/* Email field */}
-      <AnimatedContent>
-        <Input
-          label="Email *"
-          size="sm"
-          type="email"
-          radius="md"
-          {...register("email")}
-        />
-        {errors.email?.message && (
-          <FormError>* {errors.email?.message}</FormError>
-        )}
-      </AnimatedContent>
+            {/* Email field */}
+            <Input
+              label="Email"
+              labelPlacement="outside"
+              size="lg"
+              type="email"
+              radius="md"
+              placeholder="johndoe@example.com"
+              isInvalid={!!errors.email}
+              errorMessage={errors.email?.message}
+              {...register("email")}
+            />
+          </div>
 
-      {/* Message field */}
-      <AnimatedContent>
-        <Textarea
-          label="Message"
-          size="sm"
-          radius="md"
-          {...register("message")}
-        />
-        {errors.message?.message && (
-          <FormError>* {errors.message?.message}</FormError>
-        )}
-      </AnimatedContent>
+          {/* Message field */}
+          <Textarea
+            label="Message"
+            labelPlacement="outside"
+            size="lg"
+            radius="md"
+            placeholder="Your message here..."
+            isInvalid={!!errors.message}
+            errorMessage={errors.message?.message}
+            {...register("message")}
+          />
 
-      <AnimatedContent>
-        <Button
-          type="submit"
-          color="primary"
-          radius="md"
-          className="font-medium"
-          startContent={<ArrowUpRight size={16} />}
-        >
-          Send Message
-        </Button>
+          {/** Form Button */}
+          <Button
+            type="submit"
+            color="primary"
+            radius="md"
+            className="font-medium"
+            startContent={<ArrowUpRight size={16} />}
+          >
+            Send Message
+          </Button>
 
-        <p className="text-xs text-neutral-gray text-center">
-          * Fields marked with an asterisk are required.
-        </p>
+          <p className="text-xs text-neutral-gray text-center">
+            * Fields marked with an asterisk are required.
+          </p>
+        </div>
       </AnimatedContent>
     </form>
   );
