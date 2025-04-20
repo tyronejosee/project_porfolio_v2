@@ -7,7 +7,6 @@ import { Input, Button, Textarea } from "@heroui/react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ArrowUpRight } from "lucide-react";
-import { FormError } from "@/components/ui";
 import { AnimatedContent } from "@/components/animated";
 import { contactSchema } from "@/lib/validations";
 
