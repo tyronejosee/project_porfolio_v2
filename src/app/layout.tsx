@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 import localFont from "next/font/local";
-import { ThemeProvider } from "@/components/providers";
 import { BackToTop, Footer, NavbarMenu } from "@/components/ui";
+import Providers from "./providers";
 
 import "../styles/globals.css";
 import owner from "@/data/owner.json";
@@ -55,18 +55,18 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider>
+        <Providers>
           <NavbarMenu />
           <main className="max-w-screen-md mx-auto space-y-16 flex flex-col min-h-[650px] p-4">
             {children}
           </main>
           <Footer />
           <BackToTop />
-        </ThemeProvider>
+        </Providers>
       </body>
     </html>
   );

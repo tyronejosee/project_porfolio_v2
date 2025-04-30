@@ -9,6 +9,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 import { ChevronUp } from "lucide-react";
+import { scrollToTop } from "@/lib/utils";
 
 export default function BackToTop() {
   const { scrollYProgress } = useScroll();
@@ -44,13 +45,6 @@ export default function BackToTop() {
     }
   }, [showing]);
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <AnimatePresence mode="wait">
       <motion.div
@@ -68,7 +62,7 @@ export default function BackToTop() {
         className="flex max-w-fit z-40 fixed bottom-4 inset-x-0 mx-auto"
       >
         <Button
-          onClick={scrollToTop}
+          onPress={() => scrollToTop()}
           color="primary"
           aria-label="Back to Top"
           size="sm"
@@ -79,4 +73,4 @@ export default function BackToTop() {
       </motion.div>
     </AnimatePresence>
   );
-};
+}
